@@ -17,6 +17,7 @@ public class Shell {
 	
 	static boolean loopCheck(Scanner scan) {
 		System.out.println("다른 게임을 하시겠습니까?( y or n): ");
+		scan.skip("[\\r\\n]+"); //윈도우 엔터입력시 개행문자 \r\n ,참고> 리눅스는 \n
 		String input=scan.nextLine();
 		return input.equals("y") ? true : false;
 	}
