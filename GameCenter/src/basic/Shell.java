@@ -1,5 +1,5 @@
 package basic;
-
+//우리는 협업해서 진행합니다.
 import java.util.Scanner;
 
 public class Shell {
