@@ -7,7 +7,8 @@ public class Game {
 	public static void main(String[] args) throws Exception {
 		// 1.각각의 클래스이름은 김수언님부터 시작해서 Game1 ~ Game8
 		// 2.해당 클래스를 구현할때는 InterGame 이라는 인터페스를 구현해서 만드시오
-		// 3.작성후에는 공유폴더의 작업통합이라는 폴더에 올려주세요.
+		// 3.해당 소스는 깃허브를 이용해 관리됩니다. (https://github.com/xguest7/JavaGame.git)
+		
 		Scanner scan = new Scanner(System.in);
 		do {
 			Shell.title(); //메인 타이틀 출력
