@@ -15,29 +15,27 @@ public class Shell {
 		System.out.println("8가지의 즐거움을 맛볼수 있습니다.");
 	}
 	
-	static boolean loopCheck() {
-		Scanner scan = new Scanner(System.in);
+	static boolean loopCheck(Scanner scan) {
 		System.out.println("다른 게임을 하시겠습니까?( y or n): ");
 		String input=scan.nextLine();
 		return input.equals("y") ? true : false;
 	}
 		
-	static String selectInput() {
-		Scanner scan = new Scanner(System.in);
+	static String selectInput(Scanner scan) {
 		System.out.println("게임을 선택해주세요(1~8): ");
 		String num=scan.nextLine();
 		String str = "basic.Game"+ num; //호출할 클래스명 결정
 		return str;
 	}
 	
-	static void playGame(String callClassName) throws Exception {
+	static void playGame(String callClassName, Scanner scan) throws Exception {
 		
 		//해당하는 클래스를 이용하여 객체생성
 		Class<?> c = Class.forName(callClassName);   //<?>는 제한없은 와일드 카드 즉,모든 유형 다 가능
 		InterGame obj = (InterGame) c.newInstance();
 		
 		//게임진행
-		obj.title();
-		obj.play();
+		obj.title(scan);
+		obj.play(scan);
 	}
 }
