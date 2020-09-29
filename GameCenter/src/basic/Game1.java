@@ -1,5 +1,5 @@
 package basic;
-
+//test
 import java.util.Scanner;
 
 public class Game1 implements InterGame {
