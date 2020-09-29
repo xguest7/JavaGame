@@ -6,20 +6,20 @@ public class Game2 implements InterGame {
 
 	
 	@Override
-	public void title() {
+	public void title(Scanner scan) {
 		System.out.println("우승 도전");
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void play() {
+	public void play(Scanner scan) {
 		
 		
-		Scanner sc = new Scanner (System.in);
+		
 		
 		System.out.println("리그를 진행을 원하시면 1을 입력");
-		int user = sc.nextInt();
+		int user = scan.nextInt();
 		
 		if(user == 1) {
 			System.out.println("리그 진행중");
