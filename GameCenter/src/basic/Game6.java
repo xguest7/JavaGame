@@ -5,15 +5,14 @@ import java.util.Scanner;
 public class Game6 implements InterGame {
 
 	@Override
-	public void title() {
+	public void title(Scanner scan) {
 		System.out.println("***숫자맞추기 게임***");
 		System.out.println("1~100까지 숫자중에 입력해주세요 (기회는 7번)");
 		System.out.println("※게임을 중간에 멈추고 싶으면 '종료'라고 입력해주세요※");
 	}
 
 	@Override
-	public void play() {
-		Scanner scan = new Scanner(System.in);
+	public void play(Scanner scan) {
 		int count=1;
 		int com=(int)(Math.random()*100)+1;
 		System.out.println();
