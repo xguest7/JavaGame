@@ -3,17 +3,16 @@ package basic;
 import java.util.Scanner;
 
 public class Game4 implements InterGame {
-	Scanner scan = new Scanner(System.in);
 
-	@Override
-	public void title() {
+	public void title(Scanner scan) {
 		System.out.println("★☆★★☆★3개의 랜덤게임★☆★★☆★");
 		System.out.println("3번째 문제 까지 성공시 상품 획득");
 
 	}
 
-	int ran1() {
+	int ran1(Scanner scan) {
 		System.out.println("★☆★첫번째★☆★ -> 1~10중 숫자를 맞추시오.(제한횟수 10회)");
+		new Scanner(System.in);
 		int count1 = 0;
 		int count2 = 10;
 		int num = (int) ((Math.random() * 10) + 1);
@@ -29,7 +28,7 @@ public class Game4 implements InterGame {
 				System.out.println("맞추셧습니다. 다음문제로...");
 				System.out.println("---------------------");
 				System.out.println("---------------------");
-				return ran2();
+				return ran2(scan);
 			} else if (sc != 3) {
 				count1++;
 				count2--;
@@ -44,7 +43,7 @@ public class Game4 implements InterGame {
 		return 0;
 	}
 
-	int ran2() {
+	int ran2(Scanner scan) {
 		System.out.println("★☆★두번째★☆★ -> 1~2중 숫자를 맞추시오.(제한횟수 5회)");
 		int count1 = 0;
 		int count2 = 5;
@@ -62,7 +61,7 @@ public class Game4 implements InterGame {
 				System.out.println("맞추셧습니다. 다음문제로...");
 				System.out.println("---------------------");
 				System.out.println("---------------------");
-				return ran3();
+				return ran3(scan);
 			} else {
 				count1++;
 				count2--;
@@ -73,14 +72,14 @@ public class Game4 implements InterGame {
 					System.out.println("도전횟수 5번 끝 ...실패!");
 					break;
 				}
+				
 			}
-			
 			return 0;
 		}
 
 	}
 
-	int ran3() {
+	int ran3(Scanner scan) {
 		System.out.println(" ★☆★★☆★ 축하 합니다 ★☆★★☆★");
 		System.out.println("두번째 게임이 마지막 게임입니다.");
 		System.out.println("세번째 게임은 없습니다.");
@@ -90,9 +89,8 @@ public class Game4 implements InterGame {
 		return 0;
 	}
 
-	@Override
-	public void play() {
-		ran1();
+	public void play(Scanner scan) {
+		ran1(scan);
 	}
 
 }
