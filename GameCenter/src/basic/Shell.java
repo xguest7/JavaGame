@@ -19,7 +19,13 @@ public class Shell {
 		System.out.println("다른 게임을 하시겠습니까?( y or n): ");
 		String input=null;
 		if((input=scan.nextLine()) .equals(""))  //개행문자가 있으면(문자열값은 빈값으로 입력됨) 다시입력, 개행문자 아니면 정상입력
-			input=scan.nextLine();
+			while(true) {
+				input=scan.nextLine();
+				if(input.equals("Y") || input.equals("y")|| input.equals("N") || input.equals("n"))  //키입력이 Y,y,N,n 아닐경우 재입력 요청
+					break;
+				System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요.");
+			}
+		input=input.toLowerCase();	//소문자로 변경
 		return input.equals("y") ? true : false;
 	}
 		
@@ -49,8 +55,8 @@ public class Shell {
 				obj = new Game2(); break;
 //			case "basic.Game3" :						//에러
 //				obj = new Game3(); break;
-//			case "basic.Game4" :						//에러
-//				obj = new Game4(); break;
+			case "basic.Game4" :						
+				obj = new Game4(); break;
 //			case "basic.Game5" : 						//현재 미존재
 //				obj = new Game5(); break;
 			case "basic.Game6" :
